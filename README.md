@@ -1,10 +1,10 @@
 # Makeathon
 
-#### Theme
+## Theme
 
 The theme for the Makeathon challenge is SMART VEHICLES IN SMART CITIES.
 
-#### Probable Ideas
+### Probable Ideas
 
 1. Connected Cars
 2. Connected Ambulances with Street lights
