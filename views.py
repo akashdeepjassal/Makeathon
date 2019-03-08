@@ -18,7 +18,7 @@ def get_current_state():
     pass
 
 
-@app.route('/v1/test', methods=['GET'])
+@app.route('/v1/test', methods=['GET', 'POST', 'PUT'])
 def test_url():
     logger.info("User pinged {} endpoint".format(request.url))
     data = request.args.get('test_data')
