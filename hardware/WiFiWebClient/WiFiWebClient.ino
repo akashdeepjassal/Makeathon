@@ -28,7 +28,7 @@ char password[] = "hello123";
 // if you don't want to use DNS (and reduce your sketch size)
 // use the numeric IP instead of the name for the server:
 //IPAddress server(50,62,217,1);  // numeric IP for Google (no DNS)
-char server[] = "energia.nu";    // name address for Google (using DNS)
+char server[] = "ps-makeathon.herokuapp.com";    // name address for Google (using DNS)
 
 // Initialize the Ethernet client library
 // with the IP address and port of the server
@@ -68,8 +68,8 @@ void setup() {
   if (client.connect(server, 80)) {
     Serial.println("connected to server");
     // Make a HTTP request:
-    client.println("GET /hello.html HTTP/1.1");
-    client.println("Host: energia.nu");
+    client.println("GET /v1/test?test_data=Happy_Happy_Data_1234 HTTP/1.1");
+    client.println("Host: ps-makeathon.herokuapp.com");
     client.println("Connection: close");
     client.println();
   }
@@ -111,7 +111,3 @@ void printWifiStatus() {
   Serial.print(rssi);
   Serial.println(" dBm");
 }
-
-
-
-
