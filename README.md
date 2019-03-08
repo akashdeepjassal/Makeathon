@@ -8,6 +8,7 @@
 5. Smart Public Transport
 6. Drowsiness detectiong
 7. Web app that uses historical data collected by Automattic to evaluate a driver's transportation impact over time
+8. Detecting pedestrians using Infrared
 
 
 
