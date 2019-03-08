@@ -4,6 +4,16 @@ import backend
 
 logger = backend.get_logger()
 
+DB = '../db/app_data.db'
+
+sql_create_app_data_table = """ CREATE TABLE IF NOT EXISTS app_data (
+                                        device_id integer PRIMARY KEY,
+                                        device_name text NOT NULL,
+                                        last_sent_time text,
+                                        last_dispatch_time text
+                                    ); """
+
+
 def create_connection(db):
     """ create a database connection to a SQLite database """
     logger.info("Creating a connection with db...")
@@ -33,3 +43,4 @@ def create_table(conn, create_table_sql):
         logger.error('Table not created')
 
     logger.info('Table created')
+
