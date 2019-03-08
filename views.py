@@ -19,5 +19,5 @@ def test_url():
     if data is None:
         return 'API Parameter incorrect'
     else:
-        return 'Data sent is: {}',format(data)
+        return 'Data sent is: {}'.format(data)
 
