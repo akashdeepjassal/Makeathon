@@ -1,6 +1,5 @@
-import sqlite3
-from sqlite3 import Error
 import logging
+import logging.handlers
 
 
 def get_logger():
@@ -12,26 +11,17 @@ def get_logger():
     logger.addHandler(c_handler)
     logger.addHandler(f_handler)
 
+    c_handler.setLevel(logging.INFO)
+    f_handler.setLevel(logging.INFO)
+
+    # Create formatters and add to it handlers
+    c_format = logging.Formatter('%(levelname)s in %(name)s: %(message)s')
+    f_format = logging.Formatter('%(asctime)s | %(levelname)s in %(name)s [%(threadName)s]: %(message)s')
+    c_handler.setFormatter(c_format)
+    f_handler.setFormatter(f_format)
+
     return logger
 
 
 logger = get_logger()
-
-
-def create_connection(db):
-    """ create a database connection to a SQLite database """
-    logger.info("Creating a connection with db...")
-    try:
-        conn = sqlite3.connect(db)
-        print(sqlite3.version)
-        logger.info('db connection created')
-    except Error as e:
-        logger.exception('Error occurred while creating connection')
-        print(e)
-    finally:
-        if conn is not None:
-            conn.close()
-
-    return conn
-
 
