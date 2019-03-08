@@ -1,5 +1,6 @@
 import logging
 import logging.handlers
+import pathlib
 
 
 def get_logger():
@@ -25,3 +26,9 @@ def get_logger():
 
 logger = get_logger()
 
+
+def ensure_log_dir(path):
+    logger.info('Creating {} directory...'.format(path))
+    path = pathlib.Path(path)
+    path.mkdir(parents=True, exist_ok=True)
+    logger.info('{} directory created'.format(path))
