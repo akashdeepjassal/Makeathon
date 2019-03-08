@@ -8,19 +8,19 @@ logger = backend.get_logger()
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    logger.info("User pinged {} endpoint".format(request.url))
+    logger.info("User ip: {} pinged {} endpoint".format(request.remote_addr, request.url))
     return render_template('index.html')
 
 
 @app.route('/v1/current_state', methods=['POST'])
 def get_current_state():
-    logger.info("User pinged {} endpoint".format(request.url))
+    logger.info("User ip: {} pinged {} endpoint".format(request.remote_addr, request.url))
     pass
 
 
 @app.route('/v1/test', methods=['GET', 'POST', 'PUT'])
 def test_url():
-    logger.info("User pinged {} endpoint".format(request.url))
+    logger.info("User ip: {} pinged {} endpoint".format(request.remote_addr, request.url))
     data = request.args.get('test_data')
     if data is None:
         return 'API Parameter incorrect'
