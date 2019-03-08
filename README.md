@@ -1,9 +1,11 @@
 # Makeathon
 
 #### Theme
+
 The theme for the Makeathon challenge is SMART VEHICLES IN SMART CITIES.
 
 #### Probable Ideas
+
 1. Connected Cars
 2. Connected Ambulances with Street lights
 3. Smart Parking
@@ -13,9 +15,8 @@ The theme for the Makeathon challenge is SMART VEHICLES IN SMART CITIES.
 7. Web app that uses historical data collected by Automattic to evaluate a driver's transportation impact over time
 8. Detecting pedestrians using Infrared
 
-
-
 #### Judging Criteria
+
 1. Idea
 2. Prototype
 3. If we can't create an ideal protoype, we should create an analogous model from components given
