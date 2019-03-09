@@ -1,11 +1,12 @@
 # Makeathon
 
-
 ## Theme
+
 The theme for the Makeathon challenge is __SMART VEHICLES IN SMART CITIES__.
 
 
 ### Probable Ideas
+
 1. Connected Cars
 2. Connected Ambulances with Street lights
 3. Smart Parking
@@ -17,6 +18,7 @@ The theme for the Makeathon challenge is __SMART VEHICLES IN SMART CITIES__.
 
 
 ### Judging Criteria
+
 1. Idea
 2. Prototype
 3. If we can't create an ideal protoype, we should create an analogous model from components given
@@ -25,10 +27,12 @@ The theme for the Makeathon challenge is __SMART VEHICLES IN SMART CITIES__.
 
 
 ### Idea Selected
+
 > Connected ambulance system
 
 
 ### Improvements
+
 1. Android app for users
 2. Distributed server system
 3. Failover server
@@ -36,9 +40,17 @@ The theme for the Makeathon challenge is __SMART VEHICLES IN SMART CITIES__.
 
 
 ### Current Constraints
+
 1. Cannot check for a mobile(movable) client
 
 ### Tech Stack Used
+
 1. python 3.x
 2. flask
 3. gunicorn
+
+### To Do Tasks
+
+- [x] JSONify Client Response
+- [x] Add Analytical Pipeline
+- [x] Android App
