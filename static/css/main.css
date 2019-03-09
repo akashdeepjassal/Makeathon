@@ -235,6 +235,10 @@ iframe {
   padding: 15px 10px 15px 20px;
 }
 
+.boxed-blue {
+  border-color: #3e7ef5;
+}
+
 .question-group {
   width: 100%;
   min-height: 10vh;
@@ -250,19 +254,21 @@ iframe {
 }
 
 .statement-group {
-  width: 70%;
+  width: 50%;
   padding-right: 40px;
-  text-align: justify;
+  text-align: left;
+  text-transform: capitalize;
 }
 
 .choice-group {
-  width: 25%;
+  width: 50%;
   display: flex;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
   display: -ms-flexbox;
-  justify-content: space-between;
+  justify-content:left;
+  text-align: left;
 }
 
 .index {

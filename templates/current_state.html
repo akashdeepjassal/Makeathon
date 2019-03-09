@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Home</title>
+    <title>Current State</title>
     <meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
@@ -28,41 +28,38 @@
     <div class="limiter">
         <div class="container-login100">
             <div class="wrap-login100">
-                <div class="dass21-form-title p-b-70">
+                <div class="dass21-form-title p-b-35">
                     <h1>
-                        Welcome to our application.
+                        Current State of the Request...
                     </h1>
-
-                    <br />
-
-                    <h3>
-                        A connected world awaits you...
-                    </h3>
                 </div>
-                <div class="question-group txt3">
-                    <div class="boxed boxed-blue">
-                        <div class="statement-group fs-20">
-                            <strong>Page</strong>
-                        </div>
 
-                        <div class="choice-group fs-20">
-                            <strong>Endpoint</strong>
-                        </div>
+                <div class="text-left p-t-10">
+					<p class="txt3" style="text-align: justify">
+						This webpage is programmed to analyze the current state of the devices who are interacting with the server.
+					</p>
+
+					<br />
+
+					<p class="txt3">
+						The definitions are as follows:
+					</p>
+
+					<br />
+
+					<div class="question-group txt3">
+                        {% for key, value in request.items() %}
+                            <div class="boxed">
+                                <div class="statement-group">
+                                    <strong>{{ key }}</strong>
+                                </div>
+
+                                <div class="choice-group">
+                                    {{ value }}
+                                </div>
+                            </div>
+                        {% endfor %}
                     </div>
-                </div>
-
-                <div class="question-group txt3 ">
-                    {% for key, value in pages.items() %}
-                        <div class="boxed ">
-                            <div class="statement-group">
-                                <strong>{{ key }}</strong>
-                            </div>
-
-                            <div class="choice-group">
-                                {{ value }}
-                            </div>
-                        </div>
-                    {% endfor %}
                 </div>
             </div>
         </div>

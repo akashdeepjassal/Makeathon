@@ -8,7 +8,7 @@ def get_logger():
     logger.setLevel(logging.INFO)
 
     c_handler = logging.StreamHandler()
-    f_handler = logging.handlers.RotatingFileHandler("app.log", maxBytes=20000, backupCount=3)
+    f_handler = logging.handlers.RotatingFileHandler("app.log", maxBytes=1024*1024, backupCount=3)
     logger.addHandler(c_handler)
     logger.addHandler(f_handler)
 
@@ -16,7 +16,7 @@ def get_logger():
     f_handler.setLevel(logging.INFO)
 
     # Create formatters and add to it handlers
-    c_format = logging.Formatter('%(levelname)s in %(name)s: %(message)s')
+    c_format = logging.Formatter('%(asctime)s | %(levelname)s in %(name)s [%(threadName)s]: %(message)s')
     f_format = logging.Formatter('%(asctime)s | %(levelname)s in %(name)s [%(threadName)s]: %(message)s')
     c_handler.setFormatter(c_format)
     f_handler.setFormatter(f_format)
