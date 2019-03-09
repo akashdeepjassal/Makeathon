@@ -68,7 +68,7 @@ def get_current_state():
 @app.route('/v1/user/request', methods=['GET', 'POST'])
 def user_request():
     logger.info('User ip: {} accessed {} endpoint'.format(request.remote_addr, request.url))
-    pass
+    return '{"device_id": "123456", "device_name": "Website User 3"}'
 
 
 @app.route('/v1/ambulance/register', methods=['POST'])
