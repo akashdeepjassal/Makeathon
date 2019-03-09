@@ -69,27 +69,35 @@ void loop() {
   if (client.connect(server, 80)) {
     Serial.println("connected to server");
     // Make a HTTP request:
-    if (dht::readFloatData(10, &temperature, &humidity, false) == 0)
-    {
-      Serial.print("T: ");
-      Serial.print(temperature);
-      Serial.print(" H: ");
-      Serial.println(humidity);    
-      Serial.println(String(temperature));
-    }
+    (dht::readFloatData(10, &temperature, &humidity, false) == 0);
+    //{
+      //Serial.print("T: ");
+      //Serial.print(temperature);
+      //Serial.print(" H: ");
+      //Serial.println(humidity);    
+      //Serial.println(String(temperature));
+    //}
 //    char buffer[19];
 //    sprintf(buffer, "%.2f", temperature);
 //    Serial.println(buffer);
+      
+      //char buf[19];
+      //snprintf(buf, sizeof(buf), "%f", temperature);
     
-    client.println("GET /v1/test?data=Happy%20Happy%20Data%201234 HTTP/1.1");
+    //client.println("GET /v1/test?data=Happy%20Happy%20Data%201234 HTTP/1.1");
+    client.println("GET /v1/test?data=");
+    client.println(String(temperature));
+    client.println("HTTP/1.1");
+
     //String(temperature)+"HTTP/1.1");
 //Happy_Happy_Data_1234 HTTP/1.1");
     client.println("Host: ps-makeathon.herokuapp.com");
     client.println("Connection: close");
     client.println();
+    delay(30000);
   }
    
-  w1hile (client.available()) {
+  while (client.available()) {
     char c = client.read();
     Serial.print("\r");
     Serial.write(c);
@@ -103,5 +111,6 @@ void loop() {
     client.stop();
     // do nothing forevermore:
  //   while (true); 
+ 
 }
 }
