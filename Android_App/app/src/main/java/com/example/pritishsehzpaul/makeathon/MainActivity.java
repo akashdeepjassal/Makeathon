@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
         mRequestButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                String url = "ps-makeathon.herokuapp.com/v1/user/request?name=" + name + "&email=" + email
+                String url = "http://ps-makeathon.herokuapp.com/v1/user/request?name=" + name + "&email=" + email
                         + "&contact=" + contact;
                 new GetUrlContentTask().execute(url);
             }
@@ -98,7 +98,8 @@ public class MainActivity extends AppCompatActivity {
 
         String id="Error in getting data",name="Error in getting data";
         try{
-            JSONObject jsonObj = new JSONObject(result);
+            System.out.println(response.toString());
+            JSONObject jsonObj = new JSONObject(response);
             id = jsonObj.getString("device_id");
             name = jsonObj.getString("device_name");
         }
@@ -133,8 +134,10 @@ public class MainActivity extends AppCompatActivity {
                 BufferedReader rd = new BufferedReader(new InputStreamReader(connection.getInputStream()));
                 response = "";
                 String line;
+                System.out.println("Response received");
                 while ((line = rd.readLine()) != null) {
                     response += line + "\n";
+                    System.out.println(response);
                 }
             } catch (Exception e) {
                 e.printStackTrace();

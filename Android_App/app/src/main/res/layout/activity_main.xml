@@ -44,7 +44,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/prompt_name"
-                    android:inputType="textPassword" />
+                    android:inputType="text" />
 
             </android.support.design.widget.TextInputLayout>
 
@@ -88,26 +88,26 @@
                 android:layout_marginTop="16dp"
                 android:text="@string/action_request"
                 android:textStyle="bold" />
-        </LinearLayout>
 
-        <TextView
-            android:id="@+id/device_id"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/device_id"
-            android:textSize="16sp"
-            android:clickable="true"
-            android:focusable="true"
-            android:visibility="invisible" />
-        <TextView
-            android:id="@+id/device_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/device_name"
-            android:textSize="16sp"
-            android:clickable="true"
-            android:focusable="true"
-            android:visibility="invisible" />
+            <TextView
+                android:id="@+id/device_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/device_id"
+                android:textSize="16sp"
+                android:clickable="true"
+                android:focusable="true"
+                android:visibility="invisible" />
+            <TextView
+                android:id="@+id/device_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/device_name"
+                android:textSize="16sp"
+                android:clickable="true"
+                android:focusable="true"
+                android:visibility="invisible" />
+        </LinearLayout>
 
     </ScrollView>
 </LinearLayout>
