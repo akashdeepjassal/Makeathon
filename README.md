@@ -53,3 +53,4 @@ The theme for the Makeathon challenge is __SMART VEHICLES IN SMART CITIES__.
 
 - [x] JSONify Client Response
 - [x] Add Analytical Pipeline
+- [x] Android App
