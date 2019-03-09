@@ -21,9 +21,9 @@
 #include <WiFi.h>
 
 // your network name also called SSID
-char ssid[] = "Nokia 8";
+char ssid[] = "ScienceRocks";
 // your network password
-char password[] = "hello123";
+char password[] = "PoetryPeroxide";
 
 // if you don't want to use DNS (and reduce your sketch size)
 // use the numeric IP instead of the name for the server:
@@ -62,23 +62,24 @@ void setup() {
 
   Serial.println("\nIP Address obtained");
   printWifiStatus();
-
-  Serial.println("\nStarting connection to server...");
+Serial.println("\nStarting connection to server...");
   // if you get a connection, report back via serial:
-  if (client.connect(server, 80)) {
-    Serial.println("connected to server");
-    // Make a HTTP request:
-    client.println("GET /v1/test?data=Happy_Happy_Data_1234 HTTP/1.1");
-    client.println("Host: ps-makeathon.herokuapp.com");
-    client.println("Connection: close");
-    client.println();
-  }
+    if (client.connect(server, 80)) {
+      Serial.println("connected to server");
+      // Make a HTTP request:
+      client.println("GET /v1/test?data=Happy_Happy_Data_1234 HTTP/1.1");
+      client.println("Host: ps-makeathon.herokuapp.com");
+      client.println("Connection: close");
+      client.println();
+    }
+
 }
 
 void loop() {
   // if there are incoming bytes available
   // from the server, read them and print them:
   while (client.available()) {
+    
     char c = client.read();
     Serial.write(c);
   }

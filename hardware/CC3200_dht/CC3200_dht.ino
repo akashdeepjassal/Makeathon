@@ -6,9 +6,9 @@
 #include <WiFi.h>
 #include <dht.h>
 // your network name also called SSID
-char ssid[] = "Nokia 8";
+char ssid[] = "ScienceRocks";
 // your network password
-char password[] = "hello123";
+char password[] = "PoetryPeroxide";
 // if you don't want to use DNS (and reduce your sketch size)
 // use the numeric IP instead of the name for the server:
 //IPAddress server(50,62,217,1);  // numeric IP for Google (no DNS)
@@ -58,15 +58,35 @@ void setup() {
   }
   Serial.println("\nIP Address obtained");
   printWifiStatus();
-  
-  
+  Serial.println("\nStarting connection to server...");
+  if (client.connect(server, 80)) {
+    Serial.println("connected to server");
+    // Make a HTTP request:
+    //client.println("GET /v1/test?data=Happy_Happy_Data_1234 HTTP/1.1");
+    (dht::readFloatData(10, &temperature, &humidity, false) == 0);
+    char buf[20];
+    snprintf(buf, sizeof(buf), "%d", temperature);
+    char buf1[20];
+    snprintf(buf1, sizeof(buf1), "%0f", humidity);
+    client.println(String("GET /v1/test?data=" + String(buf) +"&"+ String("CC3220_2")+" HTTP/1.1" ));
+    //client.println(String("GET /v1/test?data=" +String(buf1) +" HTTP/1.1" ));
+    //client.println(String(humidity));
+    //client.println(" ");
+    //client.println();
+    client.println("Host: ps-makeathon.herokuapp.com");
+    client.println("Connection: keep-alive");
+    client.println();
+    
+  }
   
 }
+
 void loop() {
   // if there are incoming bytes available
   // from the server, read them and print them:
 
-  if (client.connect(server, 80)) {
+  /*
+   * if (client.connect(server, 80)) {
     Serial.println("connected to server");
     // Make a HTTP request:
     (dht::readFloatData(10, &temperature, &humidity, false) == 0);
@@ -87,6 +107,7 @@ void loop() {
     //client.println("GET /v1/test?data=Happy%20Happy%20Data%201234 HTTP/1.1");
     client.println("GET /v1/test?data=");
     client.println(String(temperature));
+    //client.println(String(humidity));
     client.println("HTTP/1.1");
 
     //String(temperature)+"HTTP/1.1");
@@ -94,8 +115,11 @@ void loop() {
     client.println("Host: ps-makeathon.herokuapp.com");
     client.println("Connection: close");
     client.println();
-    delay(30000);
+    delay(3000);
   }
+  */
+  
+
    
   while (client.available()) {
     char c = client.read();
@@ -113,4 +137,5 @@ void loop() {
  //   while (true); 
  
 }
+
 }
