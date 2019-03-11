@@ -4,7 +4,6 @@
 
 The theme for the Makeathon challenge is __SMART VEHICLES IN SMART CITIES__.
 
-
 ### Probable Ideas
 
 1. Connected Cars
@@ -16,7 +15,6 @@ The theme for the Makeathon challenge is __SMART VEHICLES IN SMART CITIES__.
 7. Web app that uses historical data collected by Automattic to evaluate a driver's transportation impact over time
 8. Detecting pedestrians using Infrared
 
-
 ### Judging Criteria
 
 1. Idea
@@ -25,11 +23,9 @@ The theme for the Makeathon challenge is __SMART VEHICLES IN SMART CITIES__.
 4. System should stop when pressed PUSH button. Must to include push button
 5. Make a presentaon of the projects
 
-
 ### Idea Selected
 
 > Connected ambulance system
-
 
 ### Improvements
 
@@ -37,7 +33,6 @@ The theme for the Makeathon challenge is __SMART VEHICLES IN SMART CITIES__.
 2. Distributed server system
 3. Failover server
 4. Adding logging
-
 
 ### Current Constraints
 
@@ -51,6 +46,6 @@ The theme for the Makeathon challenge is __SMART VEHICLES IN SMART CITIES__.
 
 ### To Do Tasks
 
-- [ ]  JSONify Client Response
+- [ ] JSONify Client Response
 - [ ] Add Analytical Pipeline
 - [ ] Android App
